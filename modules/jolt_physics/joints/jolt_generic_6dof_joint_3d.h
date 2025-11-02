@@ -36,6 +36,7 @@
 #include "Jolt/Jolt.h"
 
 #include "Jolt/Physics/Constraints/SixDOFConstraint.h"
+#include "Jolt/Physics/StateRecorderImpl.h"
 
 class JoltGeneric6DOFJoint3D final : public JoltJoint3D {
 	typedef Vector3::Axis Axis;

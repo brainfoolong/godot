@@ -35,6 +35,7 @@
 #include "../spaces/jolt_space_3d.h"
 
 #include "Jolt/Physics/Constraints/SixDOFConstraint.h"
+#include "Jolt/Physics/StateRecorderImpl.h"
 
 namespace {
 
@@ -649,12 +650,19 @@ float JoltGeneric6DOFJoint3D::get_applied_torque() const {
 }
 
 void JoltGeneric6DOFJoint3D::set_internal_state(String state) {
-	WARN_PRINT_ONCE("Todo implement.");
+	JPH::SixDOFConstraint *constraint = static_cast<JPH::SixDOFConstraint *>(jolt_ref.GetPtr());
+	ERR_FAIL_NULL(constraint);
+	JPH::StateRecorderImpl recorder = JPH::StateRecorderImpl();
+	recorder.WriteBytes(state.get_data(), state.length());
+	constraint->RestoreState(recorder);
 }
 
 String JoltGeneric6DOFJoint3D::get_internal_state() const {
-	WARN_PRINT_ONCE("Todo implement.");
-	return "";
+	JPH::SixDOFConstraint *constraint = static_cast<JPH::SixDOFConstraint *>(jolt_ref.GetPtr());
+	ERR_FAIL_NULL_V(constraint, "");
+	JPH::StateRecorderImpl recorder = JPH::StateRecorderImpl();
+	constraint->SaveState(recorder);
+	return recorder.GetData().c_str();
 }
 
 void JoltGeneric6DOFJoint3D::rebuild() {

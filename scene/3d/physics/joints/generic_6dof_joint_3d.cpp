@@ -296,11 +296,15 @@ bool Generic6DOFJoint3D::get_flag_z(Flag p_flag) const {
 }
 
 void Generic6DOFJoint3D::set_internal_state(String state) {
-	WARN_PRINT_ONCE("Todo implement 2.");
+	if (is_configured()) {
+		PhysicsServer3D::get_singleton()->generic_6dof_joint_set_internal_state(get_rid(), state);
+	}
 }
 
 String Generic6DOFJoint3D::get_internal_state() const {
-	WARN_PRINT_ONCE("Todo implement 2.");
+	if (is_configured()) {
+		return PhysicsServer3D::get_singleton()->generic_6dof_joint_get_internal_state(get_rid());
+	}
 	return "";
 }
 

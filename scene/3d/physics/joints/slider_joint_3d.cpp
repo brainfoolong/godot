@@ -114,11 +114,15 @@ float SliderJoint3D::get_applied_torque() const {
 }
 
 void SliderJoint3D::set_internal_state(String state) {
-	WARN_PRINT_ONCE("Todo implement 2.");
+	if (is_configured()) {
+		PhysicsServer3D::get_singleton()->slider_joint_set_internal_state(get_rid(), state);
+	}
 }
 
 String SliderJoint3D::get_internal_state() const {
-	WARN_PRINT_ONCE("Todo implement 2.");
+	if (is_configured()) {
+		return PhysicsServer3D::get_singleton()->slider_joint_get_internal_state(get_rid());
+	}
 	return "";
 }
 
