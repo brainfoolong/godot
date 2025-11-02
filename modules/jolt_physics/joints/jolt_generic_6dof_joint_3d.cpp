@@ -648,6 +648,15 @@ float JoltGeneric6DOFJoint3D::get_applied_torque() const {
 	return total_lambda.Length() / last_step;
 }
 
+void JoltGeneric6DOFJoint3D::set_internal_state(String state) {
+	WARN_PRINT_ONCE("Todo implement.");
+}
+
+String JoltGeneric6DOFJoint3D::get_internal_state() const {
+	WARN_PRINT_ONCE("Todo implement.");
+	return "";
+}
+
 void JoltGeneric6DOFJoint3D::rebuild() {
 	destroy();
 

@@ -932,6 +932,9 @@ void PhysicsServer3D::_bind_methods() {
 
 	ClassDB::bind_method(D_METHOD("pin_joint_get_applied_force", "joint"), &PhysicsServer3D::pin_joint_get_applied_force);
 
+	ClassDB::bind_method(D_METHOD("pin_joint_set_internal_state", "joint", "state"), &PhysicsServer3D::pin_joint_set_internal_state);
+	ClassDB::bind_method(D_METHOD("pin_joint_get_internal_state", "joint"), &PhysicsServer3D::pin_joint_get_internal_state);
+
 	BIND_ENUM_CONSTANT(PIN_JOINT_BIAS);
 	BIND_ENUM_CONSTANT(PIN_JOINT_DAMPING);
 	BIND_ENUM_CONSTANT(PIN_JOINT_IMPULSE_CLAMP);
@@ -959,6 +962,9 @@ void PhysicsServer3D::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("hinge_joint_get_applied_force", "joint"), &PhysicsServer3D::hinge_joint_get_applied_force);
 	ClassDB::bind_method(D_METHOD("hinge_joint_get_applied_torque", "joint"), &PhysicsServer3D::hinge_joint_get_applied_torque);
 
+	ClassDB::bind_method(D_METHOD("hinge_joint_set_internal_state", "joint", "state"), &PhysicsServer3D::hinge_joint_set_internal_state);
+	ClassDB::bind_method(D_METHOD("hinge_joint_get_internal_state", "joint"), &PhysicsServer3D::hinge_joint_get_internal_state);
+
 	ClassDB::bind_method(D_METHOD("joint_make_slider", "joint", "body_A", "local_ref_A", "body_B", "local_ref_B"), &PhysicsServer3D::joint_make_slider);
 
 	ClassDB::bind_method(D_METHOD("slider_joint_set_param", "joint", "param", "value"), &PhysicsServer3D::slider_joint_set_param);
@@ -966,6 +972,9 @@ void PhysicsServer3D::_bind_methods() {
 
 	ClassDB::bind_method(D_METHOD("slider_twist_joint_get_applied_force", "joint"), &PhysicsServer3D::slider_joint_get_applied_force);
 	ClassDB::bind_method(D_METHOD("slider_twist_joint_get_applied_torque", "joint"), &PhysicsServer3D::slider_joint_get_applied_torque);
+
+	ClassDB::bind_method(D_METHOD("slider_joint_set_internal_state", "joint", "state"), &PhysicsServer3D::slider_joint_set_internal_state);
+	ClassDB::bind_method(D_METHOD("slider_joint_get_internal_state", "joint"), &PhysicsServer3D::slider_joint_get_internal_state);
 
 	BIND_ENUM_CONSTANT(SLIDER_JOINT_LINEAR_LIMIT_UPPER);
 	BIND_ENUM_CONSTANT(SLIDER_JOINT_LINEAR_LIMIT_LOWER);
@@ -999,6 +1008,9 @@ void PhysicsServer3D::_bind_methods() {
 
 	ClassDB::bind_method(D_METHOD("cone_twist_joint_get_applied_force", "joint"), &PhysicsServer3D::cone_twist_joint_get_applied_force);
 	ClassDB::bind_method(D_METHOD("cone_twist_joint_get_applied_torque", "joint"), &PhysicsServer3D::cone_twist_joint_get_applied_torque);
+
+	ClassDB::bind_method(D_METHOD("cone_twist_joint_set_internal_state", "joint", "state"), &PhysicsServer3D::cone_twist_joint_set_internal_state);
+	ClassDB::bind_method(D_METHOD("cone_twist_joint_get_internal_state", "joint"), &PhysicsServer3D::cone_twist_joint_get_internal_state);
 
 	BIND_ENUM_CONSTANT(CONE_TWIST_JOINT_SWING_SPAN);
 	BIND_ENUM_CONSTANT(CONE_TWIST_JOINT_TWIST_SPAN);
@@ -1056,6 +1068,9 @@ void PhysicsServer3D::_bind_methods() {
 
 	ClassDB::bind_method(D_METHOD("generic_6dof_joint_get_applied_force", "joint"), &PhysicsServer3D::generic_6dof_joint_get_applied_force);
 	ClassDB::bind_method(D_METHOD("generic_6dof_joint_get_applied_torque", "joint"), &PhysicsServer3D::generic_6dof_joint_get_applied_torque);
+
+	ClassDB::bind_method(D_METHOD("generic_6dof_joint_set_internal_state", "joint", "state"), &PhysicsServer3D::generic_6dof_joint_set_internal_state);
+	ClassDB::bind_method(D_METHOD("generic_6dof_joint_get_internal_state", "joint"), &PhysicsServer3D::generic_6dof_joint_get_internal_state);
 
 	ClassDB::bind_method(D_METHOD("free_rid", "rid"), &PhysicsServer3D::free_rid);
 

@@ -239,6 +239,9 @@ public:
 	float get_applied_force() const;
 	float get_applied_torque() const;
 
+	void set_internal_state(String state);
+	String get_internal_state() const;
+
 	virtual bool setup(real_t p_step) override;
 	virtual void solve(real_t p_step) override;
 

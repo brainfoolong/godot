@@ -40,6 +40,9 @@ void HingeJoint3D::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("get_applied_force"), &HingeJoint3D::get_applied_force);
 	ClassDB::bind_method(D_METHOD("get_applied_torque"), &HingeJoint3D::get_applied_torque);
 
+	ClassDB::bind_method(D_METHOD("set_internal_state", "state"), &HingeJoint3D::set_internal_state);
+	ClassDB::bind_method(D_METHOD("get_internal_state"), &HingeJoint3D::get_internal_state);
+
 	ADD_PROPERTYI(PropertyInfo(Variant::FLOAT, "params/bias", PROPERTY_HINT_RANGE, "0.00,0.99,0.01"), "set_param", "get_param", PARAM_BIAS);
 
 	ADD_PROPERTYI(PropertyInfo(Variant::BOOL, "angular_limit/enable"), "set_flag", "get_flag", FLAG_USE_LIMIT);
@@ -104,6 +107,15 @@ float HingeJoint3D::get_applied_force() const {
 
 float HingeJoint3D::get_applied_torque() const {
 	return PhysicsServer3D::get_singleton()->hinge_joint_get_applied_torque(get_rid());
+}
+
+void HingeJoint3D::set_internal_state(String state) {
+	WARN_PRINT_ONCE("Todo implement 2.");
+}
+
+String HingeJoint3D::get_internal_state() const {
+	WARN_PRINT_ONCE("Todo implement 2.");
+	return "";
 }
 
 void HingeJoint3D::_configure_joint(RID p_joint, PhysicsBody3D *body_a, PhysicsBody3D *body_b) {

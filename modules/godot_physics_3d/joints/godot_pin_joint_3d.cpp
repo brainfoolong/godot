@@ -184,3 +184,13 @@ GodotPinJoint3D::GodotPinJoint3D(GodotBody3D *p_body_a, const Vector3 &p_pos_a, 
 
 GodotPinJoint3D::~GodotPinJoint3D() {
 }
+
+
+void GodotPinJoint3D::set_internal_state(String state) {
+	WARN_PRINT_ONCE("Joint3D->set_internal_state only required for Jolt Physics.");
+}
+
+String GodotPinJoint3D::get_internal_state() const {
+	WARN_PRINT_ONCE("Joint3D->get_internal_state only required for Jolt Physics.");
+	return "";
+}

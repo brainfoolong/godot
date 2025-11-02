@@ -334,3 +334,12 @@ float GodotConeTwistJoint3D::get_applied_torque() const {
 	WARN_PRINT_ONCE("ConeTwistJoint3D->get_applied_torque only works with Jolt Physics.");
 	return 0;
 }
+
+void GodotConeTwistJoint3D::set_internal_state(String state) {
+	WARN_PRINT_ONCE("Joint3D->set_internal_state only required for Jolt Physics.");
+}
+
+String GodotConeTwistJoint3D::get_internal_state() const {
+	WARN_PRINT_ONCE("Joint3D->get_internal_state only required for Jolt Physics.");
+	return "";
+}

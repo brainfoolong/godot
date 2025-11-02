@@ -678,6 +678,9 @@ public:
 
 	virtual float pin_joint_get_applied_force(RID p_joint) const = 0;
 
+	virtual void pin_joint_set_internal_state(RID p_joint, String state) = 0;
+	virtual String pin_joint_get_internal_state(RID p_joint) const = 0;
+
 	enum HingeJointParam {
 		HINGE_JOINT_BIAS,
 		HINGE_JOINT_LIMIT_UPPER,
@@ -707,6 +710,9 @@ public:
 
 	virtual float hinge_joint_get_applied_force(RID p_joint) const = 0;
 	virtual float hinge_joint_get_applied_torque(RID p_joint) const = 0;
+
+	virtual void hinge_joint_set_internal_state(RID p_joint, String state) = 0;
+	virtual String hinge_joint_get_internal_state(RID p_joint) const = 0;
 
 	enum SliderJointParam {
 		SLIDER_JOINT_LINEAR_LIMIT_UPPER,
@@ -744,6 +750,9 @@ public:
 	virtual float slider_joint_get_applied_force(RID p_joint) const = 0;
 	virtual float slider_joint_get_applied_torque(RID p_joint) const = 0;
 
+	virtual void slider_joint_set_internal_state(RID p_joint, String state) = 0;
+	virtual String slider_joint_get_internal_state(RID p_joint) const = 0;
+
 	enum ConeTwistJointParam {
 		CONE_TWIST_JOINT_SWING_SPAN,
 		CONE_TWIST_JOINT_TWIST_SPAN,
@@ -760,6 +769,9 @@ public:
 
 	virtual float cone_twist_joint_get_applied_force(RID p_joint) const = 0;
 	virtual float cone_twist_joint_get_applied_torque(RID p_joint) const = 0;
+
+	virtual void cone_twist_joint_set_internal_state(RID p_joint, String state) = 0;
+	virtual String cone_twist_joint_get_internal_state(RID p_joint) const = 0;
 
 	enum G6DOFJointAxisParam {
 		G6DOF_JOINT_LINEAR_LOWER_LIMIT,
@@ -807,6 +819,9 @@ public:
 
 	virtual float generic_6dof_joint_get_applied_force(RID p_joint) const = 0;
 	virtual float generic_6dof_joint_get_applied_torque(RID p_joint) const = 0;
+
+	virtual void generic_6dof_joint_set_internal_state(RID p_joint, String state) = 0;
+	virtual String generic_6dof_joint_get_internal_state(RID p_joint) const = 0;
 
 	/* QUERY API */
 

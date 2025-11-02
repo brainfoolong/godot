@@ -377,6 +377,9 @@ public:
 
 	virtual float pin_joint_get_applied_force(RID p_joint) const override;
 
+	virtual void pin_joint_set_internal_state(RID p_joint, String state) override;
+	virtual String pin_joint_get_internal_state(RID p_joint) const override;
+
 	virtual void joint_make_hinge(RID p_joint, RID p_body_a, const Transform3D &p_hinge_a, RID p_body_b, const Transform3D &p_hinge_b) override;
 
 	virtual void joint_make_hinge_simple(RID p_joint, RID p_body_a, const Vector3 &p_pivot_a, const Vector3 &p_axis_a, RID p_body_b, const Vector3 &p_pivot_b, const Vector3 &p_axis_b) override;
@@ -390,6 +393,9 @@ public:
 	virtual float hinge_joint_get_applied_force(RID p_joint) const override;
 	virtual float hinge_joint_get_applied_torque(RID p_joint) const override;
 
+	virtual void hinge_joint_set_internal_state(RID p_joint, String state) override;
+	virtual String hinge_joint_get_internal_state(RID p_joint) const override;
+
 	virtual void joint_make_slider(RID p_joint, RID p_body_a, const Transform3D &p_local_ref_a, RID p_body_b, const Transform3D &p_local_ref_b) override;
 
 	virtual void slider_joint_set_param(RID p_joint, PhysicsServer3D::SliderJointParam p_param, real_t p_value) override;
@@ -398,6 +404,9 @@ public:
 	virtual float slider_joint_get_applied_force(RID p_joint) const override;
 	virtual float slider_joint_get_applied_torque(RID p_joint) const override;
 
+	virtual void slider_joint_set_internal_state(RID p_joint, String state) override;
+	virtual String slider_joint_get_internal_state(RID p_joint) const override;
+
 	virtual void joint_make_cone_twist(RID p_joint, RID p_body_a, const Transform3D &p_local_ref_a, RID p_body_b, const Transform3D &p_local_ref_b) override;
 
 	virtual void cone_twist_joint_set_param(RID p_joint, PhysicsServer3D::ConeTwistJointParam p_param, real_t p_value) override;
@@ -405,6 +414,9 @@ public:
 
 	virtual float cone_twist_joint_get_applied_force(RID p_joint) const override;
 	virtual float cone_twist_joint_get_applied_torque(RID p_joint) const override;
+
+	virtual void cone_twist_joint_set_internal_state(RID p_joint, String state) override;
+	virtual String cone_twist_joint_get_internal_state(RID p_joint) const override;
 
 	virtual void joint_make_generic_6dof(RID p_joint, RID p_body_a, const Transform3D &p_local_ref_a, RID p_body_b, const Transform3D &p_local_ref_b) override;
 
@@ -416,6 +428,9 @@ public:
 
 	virtual float generic_6dof_joint_get_applied_force(RID p_joint) const override;
 	virtual float generic_6dof_joint_get_applied_torque(RID p_joint) const override;
+
+	virtual void generic_6dof_joint_set_internal_state(RID p_joint, String state) override;
+	virtual String generic_6dof_joint_get_internal_state(RID p_joint) const override;
 
 	virtual PhysicsServer3D::JointType joint_get_type(RID p_joint) const override;
 

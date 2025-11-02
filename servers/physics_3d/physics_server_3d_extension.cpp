@@ -390,6 +390,9 @@ void PhysicsServer3DExtension::_bind_methods() {
 
 	GDVIRTUAL_BIND(_pin_joint_get_applied_force, "joint");
 
+	GDVIRTUAL_BIND(_pin_joint_set_internal_state, "joint", "state");
+	GDVIRTUAL_BIND(_pin_joint_get_internal_state, "joint");
+
 	GDVIRTUAL_BIND(_joint_make_hinge, "joint", "body_A", "hinge_A", "body_B", "hinge_B");
 	GDVIRTUAL_BIND(_joint_make_hinge_simple, "joint", "body_A", "pivot_A", "axis_A", "body_B", "pivot_B", "axis_B");
 
@@ -402,6 +405,9 @@ void PhysicsServer3DExtension::_bind_methods() {
 	GDVIRTUAL_BIND(_hinge_joint_get_applied_force, "joint");
 	GDVIRTUAL_BIND(_hinge_joint_get_applied_torque, "joint");
 
+	GDVIRTUAL_BIND(_hinge_joint_set_internal_state, "joint", "state");
+	GDVIRTUAL_BIND(_hinge_joint_get_internal_state, "joint");
+
 	GDVIRTUAL_BIND(_joint_make_slider, "joint", "body_A", "local_ref_A", "body_B", "local_ref_B");
 
 	GDVIRTUAL_BIND(_slider_joint_set_param, "joint", "param", "value");
@@ -410,6 +416,9 @@ void PhysicsServer3DExtension::_bind_methods() {
 	GDVIRTUAL_BIND(_slider_joint_get_applied_force, "joint");
 	GDVIRTUAL_BIND(_slider_joint_get_applied_torque, "joint");
 
+	GDVIRTUAL_BIND(_slider_joint_set_internal_state, "joint", "state");
+	GDVIRTUAL_BIND(_slider_joint_get_internal_state, "joint");
+
 	GDVIRTUAL_BIND(_joint_make_cone_twist, "joint", "body_A", "local_ref_A", "body_B", "local_ref_B");
 
 	GDVIRTUAL_BIND(_cone_twist_joint_set_param, "joint", "param", "value");
@@ -417,6 +426,9 @@ void PhysicsServer3DExtension::_bind_methods() {
 
 	GDVIRTUAL_BIND(_cone_twist_joint_get_applied_force, "joint");
 	GDVIRTUAL_BIND(_cone_twist_joint_get_applied_torque, "joint");
+
+	GDVIRTUAL_BIND(_cone_twist_joint_set_internal_state, "joint", "state");
+	GDVIRTUAL_BIND(_cone_twist_joint_get_internal_state, "joint");
 
 	GDVIRTUAL_BIND(_joint_make_generic_6dof, "joint", "body_A", "local_ref_A", "body_B", "local_ref_B");
 
@@ -428,6 +440,9 @@ void PhysicsServer3DExtension::_bind_methods() {
 
 	GDVIRTUAL_BIND(_generic_6dof_joint_get_applied_force, "joint");
 	GDVIRTUAL_BIND(_generic_6dof_joint_get_applied_torque, "joint");
+
+	GDVIRTUAL_BIND(_generic_6dof_joint_set_internal_state, "joint", "state");
+	GDVIRTUAL_BIND(_generic_6dof_joint_get_internal_state, "joint");
 
 	GDVIRTUAL_BIND(_joint_get_type, "joint");
 

@@ -52,6 +52,9 @@ void Generic6DOFJoint3D::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("get_applied_force"), &Generic6DOFJoint3D::get_applied_force);
 	ClassDB::bind_method(D_METHOD("get_applied_torque"), &Generic6DOFJoint3D::get_applied_torque);
 
+	ClassDB::bind_method(D_METHOD("set_internal_state", "state"), &Generic6DOFJoint3D::set_internal_state);
+	ClassDB::bind_method(D_METHOD("get_internal_state"), &Generic6DOFJoint3D::get_internal_state);
+
 	ADD_GROUP("Linear Limit", "linear_limit_");
 
 	ADD_PROPERTYI(PropertyInfo(Variant::BOOL, "linear_limit_x/enabled"), "set_flag_x", "get_flag_x", FLAG_ENABLE_LINEAR_LIMIT);
@@ -290,6 +293,15 @@ void Generic6DOFJoint3D::set_flag_z(Flag p_flag, bool p_enabled) {
 bool Generic6DOFJoint3D::get_flag_z(Flag p_flag) const {
 	ERR_FAIL_INDEX_V(p_flag, FLAG_MAX, false);
 	return flags_z[p_flag];
+}
+
+void Generic6DOFJoint3D::set_internal_state(String state) {
+	WARN_PRINT_ONCE("Todo implement 2.");
+}
+
+String Generic6DOFJoint3D::get_internal_state() const {
+	WARN_PRINT_ONCE("Todo implement 2.");
+	return "";
 }
 
 void Generic6DOFJoint3D::_configure_joint(RID p_joint, PhysicsBody3D *body_a, PhysicsBody3D *body_b) {

@@ -36,6 +36,9 @@ void PinJoint3D::_bind_methods() {
 
 	ClassDB::bind_method(D_METHOD("get_applied_force"), &PinJoint3D::get_applied_force);
 
+	ClassDB::bind_method(D_METHOD("set_internal_state", "state"), &PinJoint3D::set_internal_state);
+	ClassDB::bind_method(D_METHOD("get_internal_state"), &PinJoint3D::get_internal_state);
+
 	ADD_PROPERTYI(PropertyInfo(Variant::FLOAT, "params/bias", PROPERTY_HINT_RANGE, "0.01,0.99,0.01"), "set_param", "get_param", PARAM_BIAS);
 	ADD_PROPERTYI(PropertyInfo(Variant::FLOAT, "params/damping", PROPERTY_HINT_RANGE, "0.01,8.0,0.01"), "set_param", "get_param", PARAM_DAMPING);
 	ADD_PROPERTYI(PropertyInfo(Variant::FLOAT, "params/impulse_clamp", PROPERTY_HINT_RANGE, "0.0,64.0,0.01"), "set_param", "get_param", PARAM_IMPULSE_CLAMP);
@@ -60,6 +63,15 @@ real_t PinJoint3D::get_param(Param p_param) const {
 
 float PinJoint3D::get_applied_force() const {
 	return PhysicsServer3D::get_singleton()->pin_joint_get_applied_force(get_rid());
+}
+
+void PinJoint3D::set_internal_state(String state) {
+	WARN_PRINT_ONCE("Todo implement 2.");
+}
+
+String PinJoint3D::get_internal_state() const {
+	WARN_PRINT_ONCE("Todo implement 2.");
+	return "";
 }
 
 void PinJoint3D::_configure_joint(RID p_joint, PhysicsBody3D *body_a, PhysicsBody3D *body_b) {

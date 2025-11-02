@@ -37,6 +37,9 @@ void SliderJoint3D::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("get_applied_force"), &SliderJoint3D::get_applied_force);
 	ClassDB::bind_method(D_METHOD("get_applied_torque"), &SliderJoint3D::get_applied_torque);
 
+	ClassDB::bind_method(D_METHOD("set_internal_state", "state"), &SliderJoint3D::set_internal_state);
+	ClassDB::bind_method(D_METHOD("get_internal_state"), &SliderJoint3D::get_internal_state);
+
 	ADD_PROPERTYI(PropertyInfo(Variant::FLOAT, "linear_limit/upper_distance", PROPERTY_HINT_RANGE, "-1024,1024,0.01,suffix:m"), "set_param", "get_param", PARAM_LINEAR_LIMIT_UPPER);
 	ADD_PROPERTYI(PropertyInfo(Variant::FLOAT, "linear_limit/lower_distance", PROPERTY_HINT_RANGE, "-1024,1024,0.01,suffix:m"), "set_param", "get_param", PARAM_LINEAR_LIMIT_LOWER);
 	ADD_PROPERTYI(PropertyInfo(Variant::FLOAT, "linear_limit/softness", PROPERTY_HINT_RANGE, "0.01,16.0,0.01"), "set_param", "get_param", PARAM_LINEAR_LIMIT_SOFTNESS);
@@ -108,6 +111,15 @@ float SliderJoint3D::get_applied_force() const {
 
 float SliderJoint3D::get_applied_torque() const {
 	return PhysicsServer3D::get_singleton()->slider_joint_get_applied_torque(get_rid());
+}
+
+void SliderJoint3D::set_internal_state(String state) {
+	WARN_PRINT_ONCE("Todo implement 2.");
+}
+
+String SliderJoint3D::get_internal_state() const {
+	WARN_PRINT_ONCE("Todo implement 2.");
+	return "";
 }
 
 void SliderJoint3D::_configure_joint(RID p_joint, PhysicsBody3D *body_a, PhysicsBody3D *body_b) {

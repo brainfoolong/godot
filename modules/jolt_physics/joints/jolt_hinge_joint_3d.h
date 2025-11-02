@@ -93,5 +93,8 @@ public:
 	float get_applied_force() const;
 	float get_applied_torque() const;
 
+	void set_internal_state(String state);
+	String get_internal_state() const;
+
 	virtual void rebuild() override;
 };
