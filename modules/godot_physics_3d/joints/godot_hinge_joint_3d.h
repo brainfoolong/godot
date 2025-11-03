@@ -112,7 +112,7 @@ public:
 	float get_applied_torque() const;
 
 	void set_internal_state(String state);
-	String get_internal_state() const;
+	PackedByteArray get_internal_state() const;
 
 	GodotHingeJoint3D(GodotBody3D *rbA, GodotBody3D *rbB, const Transform3D &frameA, const Transform3D &frameB);
 	GodotHingeJoint3D(GodotBody3D *rbA, GodotBody3D *rbB, const Vector3 &pivotInA, const Vector3 &pivotInB, const Vector3 &axisInA, const Vector3 &axisInB);

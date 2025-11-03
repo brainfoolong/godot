@@ -190,7 +190,7 @@ void GodotPinJoint3D::set_internal_state(String state) {
 	WARN_PRINT_ONCE("Joint3D->set_internal_state only required for Jolt Physics.");
 }
 
-String GodotPinJoint3D::get_internal_state() const {
+PackedByteArray GodotPinJoint3D::get_internal_state() const {
 	WARN_PRINT_ONCE("Joint3D->get_internal_state only required for Jolt Physics.");
-	return "";
+	return PackedByteArray();
 }

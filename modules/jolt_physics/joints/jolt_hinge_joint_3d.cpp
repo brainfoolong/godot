@@ -381,9 +381,9 @@ void JoltHingeJoint3D::set_internal_state(String state) {
 	WARN_PRINT_ONCE("Todo implement.");
 }
 
-String JoltHingeJoint3D::get_internal_state() const {
+PackedByteArray JoltHingeJoint3D::get_internal_state() const {
 	WARN_PRINT_ONCE("Todo implement.");
-	return "";
+	return PackedByteArray();
 }
 
 void JoltHingeJoint3D::rebuild() {

@@ -141,5 +141,5 @@ public:
 	float get_applied_torque() const;
 
 	void set_internal_state(String state);
-	String get_internal_state() const;
+	PackedByteArray get_internal_state() const;
 };

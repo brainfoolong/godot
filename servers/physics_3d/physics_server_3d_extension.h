@@ -498,7 +498,7 @@ public:
 	EXBIND1RC(float, pin_joint_get_applied_force, RID)
 
 	EXBIND2(pin_joint_set_internal_state, RID, String)
-	EXBIND1RC(String, pin_joint_get_internal_state, RID)
+	EXBIND1RC(PackedByteArray, pin_joint_get_internal_state, RID)
 
 	EXBIND5(joint_make_hinge, RID, RID, const Transform3D &, RID, const Transform3D &)
 	EXBIND7(joint_make_hinge_simple, RID, RID, const Vector3 &, const Vector3 &, RID, const Vector3 &, const Vector3 &)
@@ -513,7 +513,7 @@ public:
 	EXBIND1RC(float, hinge_joint_get_applied_torque, RID)
 
 	EXBIND2(hinge_joint_set_internal_state, RID, String)
-	EXBIND1RC(String, hinge_joint_get_internal_state, RID)
+	EXBIND1RC(PackedByteArray, hinge_joint_get_internal_state, RID)
 
 	EXBIND5(joint_make_slider, RID, RID, const Transform3D &, RID, const Transform3D &)
 
@@ -524,7 +524,7 @@ public:
 	EXBIND1RC(float, slider_joint_get_applied_torque, RID)
 
 	EXBIND2(slider_joint_set_internal_state, RID, String)
-	EXBIND1RC(String, slider_joint_get_internal_state, RID)
+	EXBIND1RC(PackedByteArray, slider_joint_get_internal_state, RID)
 
 	EXBIND5(joint_make_cone_twist, RID, RID, const Transform3D &, RID, const Transform3D &)
 
@@ -535,7 +535,7 @@ public:
 	EXBIND1RC(float, cone_twist_joint_get_applied_torque, RID)
 
 	EXBIND2(cone_twist_joint_set_internal_state, RID, String)
-	EXBIND1RC(String, cone_twist_joint_get_internal_state, RID)
+	EXBIND1RC(PackedByteArray, cone_twist_joint_get_internal_state, RID)
 
 	EXBIND5(joint_make_generic_6dof, RID, RID, const Transform3D &, RID, const Transform3D &)
 
@@ -549,7 +549,7 @@ public:
 	EXBIND1RC(float, generic_6dof_joint_get_applied_torque, RID)
 
 	EXBIND2(generic_6dof_joint_set_internal_state, RID, String)
-	EXBIND1RC(String, generic_6dof_joint_get_internal_state, RID)
+	EXBIND1RC(PackedByteArray, generic_6dof_joint_get_internal_state, RID)
 
 	EXBIND1RC(JointType, joint_get_type, RID)
 

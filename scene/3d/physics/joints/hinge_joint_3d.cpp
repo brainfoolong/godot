@@ -115,11 +115,11 @@ void HingeJoint3D::set_internal_state(String state) {
 	}
 }
 
-String HingeJoint3D::get_internal_state() const {
+PackedByteArray HingeJoint3D::get_internal_state() const {
 	if (is_configured()) {
 		return PhysicsServer3D::get_singleton()->hinge_joint_get_internal_state(get_rid());
 	}
-	return "";
+	return PackedByteArray();
 }
 
 void HingeJoint3D::_configure_joint(RID p_joint, PhysicsBody3D *body_a, PhysicsBody3D *body_b) {

@@ -84,11 +84,11 @@ void ConeTwistJoint3D::set_internal_state(String state) {
 	}
 }
 
-String ConeTwistJoint3D::get_internal_state() const {
+PackedByteArray ConeTwistJoint3D::get_internal_state() const {
 	if (is_configured()) {
 		return PhysicsServer3D::get_singleton()->cone_twist_joint_get_internal_state(get_rid());
 	}
-	return "";
+	return PackedByteArray();
 }
 
 void ConeTwistJoint3D::_configure_joint(RID p_joint, PhysicsBody3D *body_a, PhysicsBody3D *body_b) {

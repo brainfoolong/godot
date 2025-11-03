@@ -119,11 +119,11 @@ void SliderJoint3D::set_internal_state(String state) {
 	}
 }
 
-String SliderJoint3D::get_internal_state() const {
+PackedByteArray SliderJoint3D::get_internal_state() const {
 	if (is_configured()) {
 		return PhysicsServer3D::get_singleton()->slider_joint_get_internal_state(get_rid());
 	}
-	return "";
+	return PackedByteArray();
 }
 
 void SliderJoint3D::_configure_joint(RID p_joint, PhysicsBody3D *body_a, PhysicsBody3D *body_b) {

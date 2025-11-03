@@ -1350,10 +1350,10 @@ void GodotPhysicsServer3D::pin_joint_set_internal_state(RID p_joint, String stat
 	pin_joint->set_internal_state(state);
 }
 
-String GodotPhysicsServer3D::pin_joint_get_internal_state(RID p_joint) const {
+PackedByteArray GodotPhysicsServer3D::pin_joint_get_internal_state(RID p_joint) const {
 	GodotJoint3D *joint = joint_owner.get_or_null(p_joint);
-	ERR_FAIL_NULL_V(joint, "");
-	ERR_FAIL_COND_V(joint->get_type() != JOINT_TYPE_PIN, "");
+	ERR_FAIL_NULL_V(joint, PackedByteArray());
+	ERR_FAIL_COND_V(joint->get_type() != JOINT_TYPE_PIN, PackedByteArray());
 	GodotPinJoint3D *pin_joint = static_cast<GodotPinJoint3D *>(joint);
 	return pin_joint->get_internal_state();
 }
@@ -1462,10 +1462,10 @@ void GodotPhysicsServer3D::hinge_joint_set_internal_state(RID p_joint, String st
 	hinge_joint->set_internal_state(state);
 }
 
-String GodotPhysicsServer3D::hinge_joint_get_internal_state(RID p_joint) const {
+PackedByteArray GodotPhysicsServer3D::hinge_joint_get_internal_state(RID p_joint) const {
 	GodotJoint3D *joint = joint_owner.get_or_null(p_joint);
-	ERR_FAIL_NULL_V(joint, "");
-	ERR_FAIL_COND_V(joint->get_type() != JOINT_TYPE_HINGE, "");
+	ERR_FAIL_NULL_V(joint, PackedByteArray());
+	ERR_FAIL_COND_V(joint->get_type() != JOINT_TYPE_HINGE, PackedByteArray());
 	GodotHingeJoint3D *hinge_joint = static_cast<GodotHingeJoint3D *>(joint);
 	return hinge_joint->get_internal_state();
 }
@@ -1579,10 +1579,10 @@ void GodotPhysicsServer3D::slider_joint_set_internal_state(RID p_joint, String s
 	slider_joint->set_internal_state(state);
 }
 
-String GodotPhysicsServer3D::slider_joint_get_internal_state(RID p_joint) const {
+PackedByteArray GodotPhysicsServer3D::slider_joint_get_internal_state(RID p_joint) const {
 	GodotJoint3D *joint = joint_owner.get_or_null(p_joint);
-	ERR_FAIL_NULL_V(joint, "");
-	ERR_FAIL_COND_V(joint->get_type() != JOINT_TYPE_SLIDER, "");
+	ERR_FAIL_NULL_V(joint, PackedByteArray());
+	ERR_FAIL_COND_V(joint->get_type() != JOINT_TYPE_SLIDER, PackedByteArray());
 	GodotSliderJoint3D *slider_joint = static_cast<GodotSliderJoint3D *>(joint);
 	return slider_joint->get_internal_state();
 }
@@ -1651,10 +1651,10 @@ void GodotPhysicsServer3D::cone_twist_joint_set_internal_state(RID p_joint, Stri
 	cone_twist_joint->set_internal_state(state);
 }
 
-String GodotPhysicsServer3D::cone_twist_joint_get_internal_state(RID p_joint) const {
+PackedByteArray GodotPhysicsServer3D::cone_twist_joint_get_internal_state(RID p_joint) const {
 	GodotJoint3D *joint = joint_owner.get_or_null(p_joint);
-	ERR_FAIL_NULL_V(joint, "");
-	ERR_FAIL_COND_V(joint->get_type() != JOINT_TYPE_CONE_TWIST, "");
+	ERR_FAIL_NULL_V(joint, PackedByteArray());
+	ERR_FAIL_COND_V(joint->get_type() != JOINT_TYPE_CONE_TWIST, PackedByteArray());
 	GodotConeTwistJoint3D *cone_twist_joint = static_cast<GodotConeTwistJoint3D *>(joint);
 	return cone_twist_joint->get_internal_state();
 }
@@ -1739,10 +1739,10 @@ void GodotPhysicsServer3D::generic_6dof_joint_set_internal_state(RID p_joint, St
 	generic_6dof_joint->set_internal_state(state);
 }
 
-String GodotPhysicsServer3D::generic_6dof_joint_get_internal_state(RID p_joint) const {
+PackedByteArray GodotPhysicsServer3D::generic_6dof_joint_get_internal_state(RID p_joint) const {
 	GodotJoint3D *joint = joint_owner.get_or_null(p_joint);
-	ERR_FAIL_NULL_V(joint, "");
-	ERR_FAIL_COND_V(joint->get_type() != JOINT_TYPE_6DOF, "");
+	ERR_FAIL_NULL_V(joint, PackedByteArray());
+	ERR_FAIL_COND_V(joint->get_type() != JOINT_TYPE_6DOF, PackedByteArray());
 	GodotGeneric6DOFJoint3D *generic_6dof_joint = static_cast<GodotGeneric6DOFJoint3D *>(joint);
 	return generic_6dof_joint->get_internal_state();
 }

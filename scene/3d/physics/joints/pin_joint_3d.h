@@ -54,7 +54,7 @@ public:
 	float get_applied_force() const;
 
 	void set_internal_state(String state);
-	String get_internal_state() const;
+	PackedByteArray get_internal_state() const;
 
 	PinJoint3D();
 };

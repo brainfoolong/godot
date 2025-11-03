@@ -301,11 +301,11 @@ void Generic6DOFJoint3D::set_internal_state(String state) {
 	}
 }
 
-String Generic6DOFJoint3D::get_internal_state() const {
+PackedByteArray Generic6DOFJoint3D::get_internal_state() const {
 	if (is_configured()) {
 		return PhysicsServer3D::get_singleton()->generic_6dof_joint_get_internal_state(get_rid());
 	}
-	return "";
+	return PackedByteArray();
 }
 
 void Generic6DOFJoint3D::_configure_joint(RID p_joint, PhysicsBody3D *body_a, PhysicsBody3D *body_b) {

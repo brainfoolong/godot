@@ -657,12 +657,18 @@ void JoltGeneric6DOFJoint3D::set_internal_state(String state) {
 	constraint->RestoreState(recorder);
 }
 
-String JoltGeneric6DOFJoint3D::get_internal_state() const {
+PackedByteArray JoltGeneric6DOFJoint3D::get_internal_state() const {
 	JPH::SixDOFConstraint *constraint = static_cast<JPH::SixDOFConstraint *>(jolt_ref.GetPtr());
-	ERR_FAIL_NULL_V(constraint, "");
-	JPH::StateRecorderImpl recorder = JPH::StateRecorderImpl();
+	ERR_FAIL_NULL_V(constraint, PackedByteArray());
+	JPH::StateRecorderImpl recorder;
 	constraint->SaveState(recorder);
-	return recorder.GetData().c_str();
+	size_t size = recorder.GetDataSize();
+	char *buff = recorder.GetData().data();
+	PackedByteArray byteArray;
+	for (size_t i = 0; i< size; i++){
+		byteArray.append((uint8_t)buff[i]);
+	}
+	return byteArray;
 }
 
 void JoltGeneric6DOFJoint3D::rebuild() {
