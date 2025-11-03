@@ -1342,7 +1342,7 @@ float GodotPhysicsServer3D::pin_joint_get_applied_force(RID p_joint) const {
 	return pin_joint->get_applied_force();
 }
 
-void GodotPhysicsServer3D::pin_joint_set_internal_state(RID p_joint, String state) {
+void GodotPhysicsServer3D::pin_joint_set_internal_state(RID p_joint, PackedByteArray state) {
 	GodotJoint3D *joint = joint_owner.get_or_null(p_joint);
 	ERR_FAIL_NULL(joint);
 	ERR_FAIL_COND(joint->get_type() != JOINT_TYPE_PIN);
@@ -1454,7 +1454,7 @@ float GodotPhysicsServer3D::hinge_joint_get_applied_torque(RID p_joint) const {
 	return hinge_joint->get_applied_torque();
 }
 
-void GodotPhysicsServer3D::hinge_joint_set_internal_state(RID p_joint, String state) {
+void GodotPhysicsServer3D::hinge_joint_set_internal_state(RID p_joint, PackedByteArray state) {
 	GodotJoint3D *joint = joint_owner.get_or_null(p_joint);
 	ERR_FAIL_NULL(joint);
 	ERR_FAIL_COND(joint->get_type() != JOINT_TYPE_HINGE);
@@ -1571,7 +1571,7 @@ float GodotPhysicsServer3D::slider_joint_get_applied_torque(RID p_joint) const {
 	return slider_joint->get_applied_torque();
 }
 
-void GodotPhysicsServer3D::slider_joint_set_internal_state(RID p_joint, String state) {
+void GodotPhysicsServer3D::slider_joint_set_internal_state(RID p_joint, PackedByteArray state) {
 	GodotJoint3D *joint = joint_owner.get_or_null(p_joint);
 	ERR_FAIL_NULL(joint);
 	ERR_FAIL_COND(joint->get_type() != JOINT_TYPE_SLIDER);
@@ -1643,7 +1643,7 @@ float GodotPhysicsServer3D::cone_twist_joint_get_applied_torque(RID p_joint) con
 	return cone_twist_joint->get_applied_torque();
 }
 
-void GodotPhysicsServer3D::cone_twist_joint_set_internal_state(RID p_joint, String state) {
+void GodotPhysicsServer3D::cone_twist_joint_set_internal_state(RID p_joint, PackedByteArray state) {
 	GodotJoint3D *joint = joint_owner.get_or_null(p_joint);
 	ERR_FAIL_NULL(joint);
 	ERR_FAIL_COND(joint->get_type() != JOINT_TYPE_CONE_TWIST);
@@ -1731,7 +1731,7 @@ float GodotPhysicsServer3D::generic_6dof_joint_get_applied_torque(RID p_joint) c
 	return generic_6dof_joint->get_applied_torque();
 }
 
-void GodotPhysicsServer3D::generic_6dof_joint_set_internal_state(RID p_joint, String state) {
+void GodotPhysicsServer3D::generic_6dof_joint_set_internal_state(RID p_joint, PackedByteArray state) {
 	GodotJoint3D *joint = joint_owner.get_or_null(p_joint);
 	ERR_FAIL_NULL(joint);
 	ERR_FAIL_COND(joint->get_type() != JOINT_TYPE_6DOF);

@@ -1776,7 +1776,7 @@ float JoltPhysicsServer3D::pin_joint_get_applied_force(RID p_joint) const {
 	return pin_joint->get_applied_force();
 }
 
-void JoltPhysicsServer3D::pin_joint_set_internal_state(RID p_joint, String state) {
+void JoltPhysicsServer3D::pin_joint_set_internal_state(RID p_joint, PackedByteArray state) {
 	JoltJoint3D *joint = joint_owner.get_or_null(p_joint);
 	ERR_FAIL_NULL(joint);
 	ERR_FAIL_COND(joint->get_type() != JOINT_TYPE_PIN);
@@ -1852,7 +1852,7 @@ float JoltPhysicsServer3D::hinge_joint_get_applied_torque(RID p_joint) const {
 	return hinge_joint->get_applied_torque();
 }
 
-void JoltPhysicsServer3D::hinge_joint_set_internal_state(RID p_joint, String state) {
+void JoltPhysicsServer3D::hinge_joint_set_internal_state(RID p_joint, PackedByteArray state) {
 	JoltJoint3D *joint = joint_owner.get_or_null(p_joint);
 	ERR_FAIL_NULL(joint);
 	ERR_FAIL_COND(joint->get_type() != JOINT_TYPE_HINGE);
@@ -1928,7 +1928,7 @@ float JoltPhysicsServer3D::slider_joint_get_applied_torque(RID p_joint) const {
 	return slider_joint->get_applied_torque();
 }
 
-void JoltPhysicsServer3D::slider_joint_set_internal_state(RID p_joint, String state) {
+void JoltPhysicsServer3D::slider_joint_set_internal_state(RID p_joint, PackedByteArray state) {
 	JoltJoint3D *joint = joint_owner.get_or_null(p_joint);
 	ERR_FAIL_NULL(joint);
 	ERR_FAIL_COND(joint->get_type() != JOINT_TYPE_SLIDER);
@@ -2004,7 +2004,7 @@ float JoltPhysicsServer3D::cone_twist_joint_get_applied_torque(RID p_joint) cons
 	return cone_twist_joint->get_applied_torque();
 }
 
-void JoltPhysicsServer3D::cone_twist_joint_set_internal_state(RID p_joint, String state) {
+void JoltPhysicsServer3D::cone_twist_joint_set_internal_state(RID p_joint, PackedByteArray state) {
 	JoltJoint3D *joint = joint_owner.get_or_null(p_joint);
 	ERR_FAIL_NULL(joint);
 	ERR_FAIL_COND(joint->get_type() != JOINT_TYPE_CONE_TWIST);
@@ -2080,7 +2080,7 @@ float JoltPhysicsServer3D::generic_6dof_joint_get_applied_torque(RID p_joint) co
 	return g6dof_joint->get_applied_torque();
 }
 
-void JoltPhysicsServer3D::generic_6dof_joint_set_internal_state(RID p_joint, String state) {
+void JoltPhysicsServer3D::generic_6dof_joint_set_internal_state(RID p_joint, PackedByteArray state) {
 	JoltJoint3D *joint = joint_owner.get_or_null(p_joint);
 	ERR_FAIL_NULL(joint);
 	ERR_FAIL_COND(joint->get_type() != JOINT_TYPE_6DOF);

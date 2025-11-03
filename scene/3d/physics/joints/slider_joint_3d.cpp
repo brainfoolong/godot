@@ -113,7 +113,7 @@ float SliderJoint3D::get_applied_torque() const {
 	return PhysicsServer3D::get_singleton()->slider_joint_get_applied_torque(get_rid());
 }
 
-void SliderJoint3D::set_internal_state(String state) {
+void SliderJoint3D::set_internal_state(PackedByteArray state) {
 	if (is_configured()) {
 		PhysicsServer3D::get_singleton()->slider_joint_set_internal_state(get_rid(), state);
 	}

@@ -344,13 +344,16 @@ float JoltConeTwistJoint3D::get_applied_torque() const {
 	return total_lambda / last_step;
 }
 
-void JoltConeTwistJoint3D::set_internal_state(String state) {
-	WARN_PRINT_ONCE("Todo implement.");
+void JoltConeTwistJoint3D::set_internal_state(PackedByteArray state) {
+	JPH::SwingTwistConstraint *constraint = static_cast<JPH::SwingTwistConstraint *>(jolt_ref.GetPtr());
+	ERR_FAIL_NULL(constraint);
+	_set_internal_state(constraint, state);
 }
 
 PackedByteArray JoltConeTwistJoint3D::get_internal_state() const {
-	WARN_PRINT_ONCE("Todo implement.");
-	return PackedByteArray();
+	JPH::SwingTwistConstraint *constraint = static_cast<JPH::SwingTwistConstraint *>(jolt_ref.GetPtr());
+	ERR_FAIL_NULL_V(constraint, PackedByteArray());
+	return _get_internal_state(constraint);
 }
 
 void JoltConeTwistJoint3D::rebuild() {

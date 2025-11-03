@@ -684,7 +684,7 @@ float GodotGeneric6DOFJoint3D::get_applied_torque() const {
 	return 0;
 }
 
-void GodotGeneric6DOFJoint3D::set_internal_state(String state) {
+void GodotGeneric6DOFJoint3D::set_internal_state(PackedByteArray state) {
 	WARN_PRINT_ONCE("Joint3D->set_internal_state only required for Jolt Physics.");
 }
 

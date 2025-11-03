@@ -359,7 +359,7 @@ public:
 
 	FUNC1RC(float, pin_joint_get_applied_force, RID)
 
-	FUNC2(pin_joint_set_internal_state, RID, String)
+	FUNC2(pin_joint_set_internal_state, RID, PackedByteArray)
 	FUNC1RC(PackedByteArray, pin_joint_get_internal_state, RID)
 
 	FUNC5(joint_make_hinge, RID, RID, const Transform3D &, RID, const Transform3D &)
@@ -374,7 +374,7 @@ public:
 	FUNC1RC(float, hinge_joint_get_applied_force, RID)
 	FUNC1RC(float, hinge_joint_get_applied_torque, RID)
 
-	FUNC2(hinge_joint_set_internal_state, RID, String)
+	FUNC2(hinge_joint_set_internal_state, RID, PackedByteArray)
 	FUNC1RC(PackedByteArray, hinge_joint_get_internal_state, RID)
 
 	FUNC5(joint_make_slider, RID, RID, const Transform3D &, RID, const Transform3D &)
@@ -385,7 +385,7 @@ public:
 	FUNC1RC(float, slider_joint_get_applied_force, RID)
 	FUNC1RC(float, slider_joint_get_applied_torque, RID)
 
-	FUNC2(slider_joint_set_internal_state, RID, String)
+	FUNC2(slider_joint_set_internal_state, RID, PackedByteArray)
 	FUNC1RC(PackedByteArray, slider_joint_get_internal_state, RID)
 
 	FUNC5(joint_make_cone_twist, RID, RID, const Transform3D &, RID, const Transform3D &)
@@ -396,7 +396,7 @@ public:
 	FUNC1RC(float, cone_twist_joint_get_applied_force, RID)
 	FUNC1RC(float, cone_twist_joint_get_applied_torque, RID)
 
-	FUNC2(cone_twist_joint_set_internal_state, RID, String)
+	FUNC2(cone_twist_joint_set_internal_state, RID, PackedByteArray)
 	FUNC1RC(PackedByteArray, cone_twist_joint_get_internal_state, RID)
 
 	FUNC5(joint_make_generic_6dof, RID, RID, const Transform3D &, RID, const Transform3D &)
@@ -410,7 +410,7 @@ public:
 	FUNC1RC(float, generic_6dof_joint_get_applied_force, RID)
 	FUNC1RC(float, generic_6dof_joint_get_applied_torque, RID)
 
-	FUNC2(generic_6dof_joint_set_internal_state, RID, String)
+	FUNC2(generic_6dof_joint_set_internal_state, RID, PackedByteArray)
 	FUNC1RC(PackedByteArray, generic_6dof_joint_get_internal_state, RID)
 
 	FUNC1RC(JointType, joint_get_type, RID);

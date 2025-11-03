@@ -89,7 +89,7 @@ public:
 
 	float get_applied_force() const;
 
-	void set_internal_state(String state);
+	void set_internal_state(PackedByteArray state);
 	PackedByteArray get_internal_state() const;
 
 	GodotPinJoint3D(GodotBody3D *p_body_a, const Vector3 &p_pos_a, GodotBody3D *p_body_b, const Vector3 &p_pos_b);

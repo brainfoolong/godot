@@ -34,6 +34,7 @@
 #include "../misc/jolt_type_conversions.h"
 #include "../objects/jolt_body_3d.h"
 #include "../spaces/jolt_space_3d.h"
+#include "Jolt/Physics/StateRecorderImpl.h"
 
 namespace {
 
@@ -100,6 +101,29 @@ void JoltJoint3D::_iterations_changed() {
 
 String JoltJoint3D::_bodies_to_string() const {
 	return vformat("'%s' and '%s'", body_a != nullptr ? body_a->to_string() : "<unknown>", body_b != nullptr ? body_b->to_string() : "<World>");
+}
+
+void JoltJoint3D::_set_internal_state(JPH::Constraint *constraint, PackedByteArray state) {
+	JPH::StateRecorderImpl recorder = JPH::StateRecorderImpl();
+	size_t size = state.size();
+	char *buff = new char[size];
+	for (size_t i = 0; i < size; i++) {
+		buff[i] = (char)state.get(i);
+	}
+	recorder.WriteBytes(buff, size);
+	constraint->RestoreState(recorder);
+}
+
+PackedByteArray JoltJoint3D::_get_internal_state(JPH::Constraint *constraint) const {
+	JPH::StateRecorderImpl recorder;
+	constraint->SaveState(recorder);
+	size_t size = recorder.GetDataSize();
+	char *buff = recorder.GetData().data();
+	PackedByteArray byteArray;
+	for (size_t i = 0; i < size; i++) {
+		byteArray.append((uint8_t)buff[i]);
+	}
+	return byteArray;
 }
 
 JoltJoint3D::JoltJoint3D(const JoltJoint3D &p_old_joint, JoltBody3D *p_body_a, JoltBody3D *p_body_b, const Transform3D &p_local_ref_a, const Transform3D &p_local_ref_b) :

@@ -678,7 +678,7 @@ public:
 
 	virtual float pin_joint_get_applied_force(RID p_joint) const = 0;
 
-	virtual void pin_joint_set_internal_state(RID p_joint, String state) = 0;
+	virtual void pin_joint_set_internal_state(RID p_joint, PackedByteArray state) = 0;
 	virtual PackedByteArray pin_joint_get_internal_state(RID p_joint) const = 0;
 
 	enum HingeJointParam {
@@ -711,7 +711,7 @@ public:
 	virtual float hinge_joint_get_applied_force(RID p_joint) const = 0;
 	virtual float hinge_joint_get_applied_torque(RID p_joint) const = 0;
 
-	virtual void hinge_joint_set_internal_state(RID p_joint, String state) = 0;
+	virtual void hinge_joint_set_internal_state(RID p_joint, PackedByteArray state) = 0;
 	virtual PackedByteArray hinge_joint_get_internal_state(RID p_joint) const = 0;
 
 	enum SliderJointParam {
@@ -750,7 +750,7 @@ public:
 	virtual float slider_joint_get_applied_force(RID p_joint) const = 0;
 	virtual float slider_joint_get_applied_torque(RID p_joint) const = 0;
 
-	virtual void slider_joint_set_internal_state(RID p_joint, String state) = 0;
+	virtual void slider_joint_set_internal_state(RID p_joint, PackedByteArray state) = 0;
 	virtual PackedByteArray slider_joint_get_internal_state(RID p_joint) const = 0;
 
 	enum ConeTwistJointParam {
@@ -770,7 +770,7 @@ public:
 	virtual float cone_twist_joint_get_applied_force(RID p_joint) const = 0;
 	virtual float cone_twist_joint_get_applied_torque(RID p_joint) const = 0;
 
-	virtual void cone_twist_joint_set_internal_state(RID p_joint, String state) = 0;
+	virtual void cone_twist_joint_set_internal_state(RID p_joint, PackedByteArray state) = 0;
 	virtual PackedByteArray cone_twist_joint_get_internal_state(RID p_joint) const = 0;
 
 	enum G6DOFJointAxisParam {
@@ -820,7 +820,7 @@ public:
 	virtual float generic_6dof_joint_get_applied_force(RID p_joint) const = 0;
 	virtual float generic_6dof_joint_get_applied_torque(RID p_joint) const = 0;
 
-	virtual void generic_6dof_joint_set_internal_state(RID p_joint, String state) = 0;
+	virtual void generic_6dof_joint_set_internal_state(RID p_joint, PackedByteArray state) = 0;
 	virtual PackedByteArray generic_6dof_joint_get_internal_state(RID p_joint) const = 0;
 
 	/* QUERY API */

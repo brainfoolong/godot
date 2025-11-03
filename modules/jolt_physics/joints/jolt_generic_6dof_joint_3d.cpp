@@ -649,26 +649,16 @@ float JoltGeneric6DOFJoint3D::get_applied_torque() const {
 	return total_lambda.Length() / last_step;
 }
 
-void JoltGeneric6DOFJoint3D::set_internal_state(String state) {
+void JoltGeneric6DOFJoint3D::set_internal_state(PackedByteArray state) {
 	JPH::SixDOFConstraint *constraint = static_cast<JPH::SixDOFConstraint *>(jolt_ref.GetPtr());
 	ERR_FAIL_NULL(constraint);
-	JPH::StateRecorderImpl recorder = JPH::StateRecorderImpl();
-	recorder.WriteBytes(state.get_data(), state.length());
-	constraint->RestoreState(recorder);
+	_set_internal_state(constraint, state);
 }
 
 PackedByteArray JoltGeneric6DOFJoint3D::get_internal_state() const {
 	JPH::SixDOFConstraint *constraint = static_cast<JPH::SixDOFConstraint *>(jolt_ref.GetPtr());
 	ERR_FAIL_NULL_V(constraint, PackedByteArray());
-	JPH::StateRecorderImpl recorder;
-	constraint->SaveState(recorder);
-	size_t size = recorder.GetDataSize();
-	char *buff = recorder.GetData().data();
-	PackedByteArray byteArray;
-	for (size_t i = 0; i< size; i++){
-		byteArray.append((uint8_t)buff[i]);
-	}
-	return byteArray;
+	return _get_internal_state(constraint);
 }
 
 void JoltGeneric6DOFJoint3D::rebuild() {

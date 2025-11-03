@@ -35,6 +35,7 @@
 #include "Jolt/Jolt.h"
 
 #include "Jolt/Physics/Constraints/Constraint.h"
+#include "Jolt/Physics/StateRecorderImpl.h"
 
 class JoltBody3D;
 class JoltSpace3D;
@@ -68,6 +69,9 @@ protected:
 	void _iterations_changed();
 
 	String _bodies_to_string() const;
+
+	void _set_internal_state(JPH::Constraint *constraint, PackedByteArray state);
+	PackedByteArray _get_internal_state(JPH::Constraint *constraint) const;
 
 public:
 	JoltJoint3D() = default;

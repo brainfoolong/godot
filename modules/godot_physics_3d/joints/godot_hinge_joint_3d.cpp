@@ -450,7 +450,7 @@ float GodotHingeJoint3D::get_applied_torque() const {
 	return 0;
 }
 
-void GodotHingeJoint3D::set_internal_state(String state) {
+void GodotHingeJoint3D::set_internal_state(PackedByteArray state) {
 	WARN_PRINT_ONCE("Joint3D->set_internal_state only required for Jolt Physics.");
 }
 

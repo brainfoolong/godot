@@ -490,13 +490,28 @@ float JoltSliderJoint3D::get_applied_torque() const {
 	}
 }
 
-void JoltSliderJoint3D::set_internal_state(String state) {
-	WARN_PRINT_ONCE("Todo implement.");
+void JoltSliderJoint3D::set_internal_state(PackedByteArray state) {
+	if (_is_fixed()) {
+		JPH::FixedConstraint *constraint = static_cast<JPH::FixedConstraint *>(jolt_ref.GetPtr());
+		ERR_FAIL_NULL(constraint);
+		_set_internal_state(constraint, state);
+	} else {
+		JPH::SliderConstraint *constraint = static_cast<JPH::SliderConstraint *>(jolt_ref.GetPtr());
+		ERR_FAIL_NULL(constraint);
+		_set_internal_state(constraint, state);
+	}
 }
 
 PackedByteArray JoltSliderJoint3D::get_internal_state() const {
-	WARN_PRINT_ONCE("Todo implement.");
-	return PackedByteArray();
+	if (_is_fixed()) {
+		JPH::FixedConstraint *constraint = static_cast<JPH::FixedConstraint *>(jolt_ref.GetPtr());
+		ERR_FAIL_NULL_V(constraint, PackedByteArray());
+		return _get_internal_state(constraint);
+	} else {
+		JPH::SliderConstraint *constraint = static_cast<JPH::SliderConstraint *>(jolt_ref.GetPtr());
+		ERR_FAIL_NULL_V(constraint, PackedByteArray());
+		return _get_internal_state(constraint);
+	}
 }
 
 void JoltSliderJoint3D::rebuild() {

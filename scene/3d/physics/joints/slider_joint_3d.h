@@ -76,7 +76,7 @@ public:
 	float get_applied_force() const;
 	float get_applied_torque() const;
 
-	void set_internal_state(String state);
+	void set_internal_state(PackedByteArray state);
 	PackedByteArray get_internal_state() const;
 
 	SliderJoint3D();

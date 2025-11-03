@@ -65,7 +65,7 @@ float PinJoint3D::get_applied_force() const {
 	return PhysicsServer3D::get_singleton()->pin_joint_get_applied_force(get_rid());
 }
 
-void PinJoint3D::set_internal_state(String state) {
+void PinJoint3D::set_internal_state(PackedByteArray state) {
 	if (is_configured()) {
 		PhysicsServer3D::get_singleton()->pin_joint_set_internal_state(get_rid(), state);
 	}

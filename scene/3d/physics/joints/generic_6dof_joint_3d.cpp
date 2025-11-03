@@ -295,7 +295,7 @@ bool Generic6DOFJoint3D::get_flag_z(Flag p_flag) const {
 	return flags_z[p_flag];
 }
 
-void Generic6DOFJoint3D::set_internal_state(String state) {
+void Generic6DOFJoint3D::set_internal_state(PackedByteArray state) {
 	if (is_configured()) {
 		PhysicsServer3D::get_singleton()->generic_6dof_joint_set_internal_state(get_rid(), state);
 	}

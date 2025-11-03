@@ -134,13 +134,16 @@ float JoltPinJoint3D::get_applied_force() const {
 	return constraint->GetTotalLambdaPosition().Length() / last_step;
 }
 
-void JoltPinJoint3D::set_internal_state(String state) {
-	WARN_PRINT_ONCE("Todo implement.");
+void JoltPinJoint3D::set_internal_state(PackedByteArray state) {
+	JPH::PointConstraint *constraint = static_cast<JPH::PointConstraint *>(jolt_ref.GetPtr());
+	ERR_FAIL_NULL(constraint);
+	_set_internal_state(constraint, state);
 }
 
 PackedByteArray JoltPinJoint3D::get_internal_state() const {
-	WARN_PRINT_ONCE("Todo implement.");
-	return PackedByteArray();
+	JPH::PointConstraint *constraint = static_cast<JPH::PointConstraint *>(jolt_ref.GetPtr());
+	ERR_FAIL_NULL_V(constraint, PackedByteArray());
+	return _get_internal_state(constraint);
 }
 
 void JoltPinJoint3D::rebuild() {

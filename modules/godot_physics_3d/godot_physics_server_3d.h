@@ -336,7 +336,7 @@ public:
 
 	virtual float pin_joint_get_applied_force(RID p_joint) const override;
 
-	virtual void pin_joint_set_internal_state(RID p_joint, String state) override;
+	virtual void pin_joint_set_internal_state(RID p_joint, PackedByteArray state) override;
 	virtual PackedByteArray pin_joint_get_internal_state(RID p_joint) const override;
 
 	virtual void joint_make_hinge(RID p_joint, RID p_body_A, const Transform3D &p_frame_A, RID p_body_B, const Transform3D &p_frame_B) override;
@@ -351,7 +351,7 @@ public:
 	virtual float hinge_joint_get_applied_force(RID p_joint) const override;
 	virtual float hinge_joint_get_applied_torque(RID p_joint) const override;
 
-	virtual void hinge_joint_set_internal_state(RID p_joint, String state) override;
+	virtual void hinge_joint_set_internal_state(RID p_joint, PackedByteArray state) override;
 	virtual PackedByteArray hinge_joint_get_internal_state(RID p_joint) const override;
 
 	virtual void joint_make_slider(RID p_joint, RID p_body_A, const Transform3D &p_local_frame_A, RID p_body_B, const Transform3D &p_local_frame_B) override; //reference frame is A
@@ -362,7 +362,7 @@ public:
 	virtual float slider_joint_get_applied_force(RID p_joint) const override;
 	virtual float slider_joint_get_applied_torque(RID p_joint) const override;
 
-	virtual void slider_joint_set_internal_state(RID p_joint, String state) override;
+	virtual void slider_joint_set_internal_state(RID p_joint, PackedByteArray state) override;
 	virtual PackedByteArray slider_joint_get_internal_state(RID p_joint) const override;
 
 	virtual void joint_make_cone_twist(RID p_joint, RID p_body_A, const Transform3D &p_local_frame_A, RID p_body_B, const Transform3D &p_local_frame_B) override; //reference frame is A
@@ -373,7 +373,7 @@ public:
 	virtual float cone_twist_joint_get_applied_force(RID p_joint) const override;
 	virtual float cone_twist_joint_get_applied_torque(RID p_joint) const override;
 
-	virtual void cone_twist_joint_set_internal_state(RID p_joint, String state) override;
+	virtual void cone_twist_joint_set_internal_state(RID p_joint, PackedByteArray state) override;
 	virtual PackedByteArray cone_twist_joint_get_internal_state(RID p_joint) const override;
 
 	virtual void joint_make_generic_6dof(RID p_joint, RID p_body_A, const Transform3D &p_local_frame_A, RID p_body_B, const Transform3D &p_local_frame_B) override; //reference frame is A
@@ -387,7 +387,7 @@ public:
 	virtual float generic_6dof_joint_get_applied_force(RID p_joint) const override;
 	virtual float generic_6dof_joint_get_applied_torque(RID p_joint) const override;
 
-	virtual void generic_6dof_joint_set_internal_state(RID p_joint, String state) override;
+	virtual void generic_6dof_joint_set_internal_state(RID p_joint, PackedByteArray state) override;
 	virtual PackedByteArray generic_6dof_joint_get_internal_state(RID p_joint) const override;
 
 	virtual JointType joint_get_type(RID p_joint) const override;
